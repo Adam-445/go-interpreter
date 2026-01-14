@@ -79,6 +79,8 @@ func (p *Parser) ParseStatement() ast.Statement {
 		return p.parseLetStatement()
 	case token.RETURN:
 		return p.parseReturnStatement()
+	case token.SEMICOLON:
+		return nil
 	default:
 		return p.parseExpressionStatement()
 	}
